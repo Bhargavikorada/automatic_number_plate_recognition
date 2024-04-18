@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video License Plate Recognition</title>
+    <link rel="stylesheet" href="templates\header.css">
+    
+    <style>
+      /* Basic styling */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0; /* Light gray background */
+        /* padding: 20px; */
+      }
+
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+      }
+      header {
+          background-color: #333;
+          color: #fff;
+          padding: 20px;
+          text-align: center;
+      }
+
+      nav ul {
+          list-style-type: none;
+          padding: 10px;
+          text-align: center;
+      }
+
+      nav ul li {
+          display: inline;
+          margin-right: 20px;
+      }
+
+      nav ul li a {
+          color: #333;
+          text-decoration: none;
+          font-weight: bold;
+      }
+
+      .head {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .form-row {
+        text-align: center;
+      }
+
+      .form-row input[type="file"] {
+        display: inline-block;
+        margin-right: 10px; /* Add space between input and button */
+        padding: 1px; /* Add padding */
+        border: 2px solid #00796b; /* Add border */
+        border-radius: 5px; /* Add border radius */
+        background-color: #fff; /* White background */
+        color: #00796b; /* Text color */
+        font-size: 16px; /* Font size */
+      }
+
+      .form-row input[type="file"]:hover {
+        border-color: #02453d; /* Darker border color on hover */
+      }
+
+      .form-row button[type="submit"] {
+        padding: 8px 20px;
+        background-color: #00796b;; /* Blue submit button */
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .form-row button[type="submit"]:hover {
+        background-color: #02453d; /* Darker blue on hover */
+      }
+
+      video {
+        display: block;
+        margin: 0 auto 20px; /* Center the video */
+        max-width: 100%; /* Ensure the video doesn't exceed its container */
+        height: auto;
+      }
+
+      h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head> 
+  <body>
+
+    <header>
+      <h1>Automatic Number Plate Recognition System</h1>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="/home1">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+
+    <h1 class="head">Video License Plate Recognition</h1>
+    <br><br>
+    <form action="/predict" method="post" enctype="multipart/form-data">
+      <div class="form-row">
+        <input type="file" name="my_video" id="pwd">
+        <button type="submit">Upload</button>
+      </div>
+    </form>
+
+    {% if predictions %}
+        <video width="320" height="240" controls autoplay muted>
+          <source src="{{img_path}}" type="video/mp4">
+          Browser
+        </video>      
+        <h2> Number Plate   : <i> {{predictions}} </i></h2>
+    {% endif %}
+  </body>
+</html>

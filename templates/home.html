@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automatic Number Plate Recognition</title>
+    <style>
+
+        /* Basic styling */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        
+        main {
+            padding: 20px;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #009688; /* Change button color to teal */
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            font-size: 20px;
+        }
+
+        .btn:hover {
+            background-color: #00796b; /* Darker teal on hover */
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        h2{
+            padding-top: 70px;
+            font-size: 30px;
+        }
+        .our{
+            padding-top: 20px;
+        }
+        /* .div_class{
+            flex:1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px 30px;
+        } */
+        .select-class{
+            font-size: 20px;
+            padding-bottom: 20px;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Automatic Number Plate Recognition System</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section class="intro">
+            <h2>Welcome to our ANPR System</h2>
+            <p class="our">Our system uses advanced technology to automatically recognize number plates from images or videos.</p>
+            
+            
+            <br><br><br><p class="select-class">Select whether you'd like to upload an image or a video</p><br>
+            <div class="div_class">    
+                <form action="/selectImage" method="post" enctype="multipart/form-data">
+            
+                    <button type="submit" class="btn">Image</button><br>
+                </form><br><br>
+                <form action="/selectVideo" method="post" enctype="multipart/form-data">
+                    <button type="submit" class="btn">Video</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Automatic Number Plate Recognition System</p>
+    </footer>
+</body>
+</html>
